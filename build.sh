@@ -38,21 +38,21 @@ for SIZE in 24 32 48; do
 
         echo -ne "\\033[0KGenerating $BASENAME @ $SIZE\\r"
 
-        inkscape -w $SIZE -f $THEME_SVGS/"$BASENAME".svg -e "$OUTPUT_DIR/$BASENAME.png" > /dev/null
+        inkscape -w $SIZE --export-filename "$OUTPUT_DIR/$BASENAME.png" $THEME_SVGS/"$BASENAME".svg > /dev/null
     done
     echo -e "\\033[0KGenerating simple cursor pixmaps... DONE"
     
     
     echo -ne "\\033[0KGenerating progress-cursor pixmaps...\\r"
     for i in 01 02 03 04 05 06 07 08 09 10; do
-        inkscape -w $SIZE -f $THEME_SVGS/progress-$i.svg -e "$OUTPUT_DIR/progress-$i.png" > /dev/null
+        inkscape -w $SIZE --export-filename "$OUTPUT_DIR/progress-$i.png" $THEME_SVGS/progress-$i.svg > /dev/null
     done
     echo -e "\\033[0KGenerating progress-cursor pixmaps... DONE"
     
     
     echo -ne "\\033[0KGenerating wait-cursor pixmaps...\\r"
     for i in 01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16 17 18 19 20; do
-        inkscape -w $SIZE -f $THEME_SVGS/wait-$i.svg -e "$OUTPUT_DIR/wait-$i.png" > /dev/null
+        inkscape -w $SIZE --export-filename "$OUTPUT_DIR/wait-$i.png" $THEME_SVGS/wait-$i.svg > /dev/null
     done
     echo -e "\\033[0KGenerating wait-cursor pixmaps... DONE"
 done
